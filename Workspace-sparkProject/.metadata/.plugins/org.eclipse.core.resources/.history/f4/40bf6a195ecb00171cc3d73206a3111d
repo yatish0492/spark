@@ -1,0 +1,60 @@
+package com.yatish.spark.transformations;
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.apache.spark.SparkConf;
+import org.apache.spark.api.java.JavaPairRDD;
+import org.apache.spark.api.java.JavaRDD;
+import org.apache.spark.api.java.JavaSparkContext;
+import org.apache.spark.api.java.function.Function2;
+
+import scala.Tuple2;
+
+public class S12_ReduceByKey {
+
+	public static void main(String[] args) {
+		
+		SparkConf conf = new SparkConf().setAppName("SparkStart").setMaster("local");
+		JavaSparkContext sc = new JavaSparkContext(conf);
+		List<Integer> data = Arrays.asList(1, 2, 3, 4, 5, 6, 1, 2, 3,1);	
+		JavaRDD<Integer> rddData = sc.parallelize(data);
+		
+		JavaPairRDD<Integer,Integer> rddData1 = rddData.mapToPair(a -> {
+			return new Tuple2<Integer,Integer>(a,2);
+		});
+		System.out.println(rddData1.collect());
+		
+		/*
+		 * Using '.groupByKey()' method you are just grouping the results instead of two pairs like (2,3) and (2,5) it will give you (2,[3,5]). Consider instead of assigning both the values to same
+		 * key in one pair you want to do some operations on the values and assign it like instead of (2,[3,5]), you want it to be (2,8), we add the values 3 and 5 and assign it as the value instead
+		 * of maintain a list as value?
+		 * Using '.reduceByKey' we can achieve it. We basically do reduce/action on the values.In the lambda/Function of the '.recuceByKey' method we will mention the logic for reduce/action.
+		 * 
+		 * 'rddData1' --> [(1,2), (2,2), (3,2), (4,2), (5,2), (6,2), (1,2), (2,2), (3,2), (1,2)]
+		 * 
+		 * In the below code, the input to the lambda/Function will be the values of the same key like we have 3 pairs for key '1' from 'rddData1' which are (1,2),(1,2),(1,2). initially first 2 pairs
+		 * (1,2),(1,2) and send the value of first pair to 'valueOfPair1' and the value of second pair to 'valueOfPair2'. it will return the sum '4'. hence for key '1' we have (1,4) and the third pair
+		 * (1,2). Again the key '1' pairs are considered which are (1,4),(1,2), for this pair again lambda is executed the first pair value '4' is sent to 'valueOfPair1' and the seconds pair value '2'
+		 * is sent to 'valueOfPair2'
+		 * 
+		 * 
+		 * The logic will be executed for only pairs with duplicate keys.
+		 * [(4,1), (1,1), (6,1), (3,1), (5,1), (2,1)]
+		 * [(4,1), (1,2), (6,1), (3,2), (5,1), (2,2)]
+		 */
+		
+		JavaPairRDD<Integer,Integer> rddData2 = rddData1.reduceByKey((valueOfPair1,valueOfPair2) -> valueOfPair1+valueOfPair2);
+		System.out.println(rddData2.collect());
+		
+		JavaPairRDD<Integer,Integer> rddData3 = rddData1.reduceByKey(new Function2<Integer,Integer,Integer>() {
+			
+			public Integer call(Integer a,Integer b) {
+				return a+b;
+			}
+		});
+		System.out.println(rddData3.collect());
+
+	}
+
+}

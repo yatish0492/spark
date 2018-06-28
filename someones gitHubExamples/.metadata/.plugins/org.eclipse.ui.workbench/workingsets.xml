@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workingSetManager>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1521520100714_0" label="spark-parent_2.10" name="spark-parent_2.10">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Spark" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/spark-test-tags_2.10" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/spark-core_2.10" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/spark-bagel_2.10" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/spark-graphx_2.10" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/spark-mllib_2.10" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/spark-tools_2.10" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/spark-network-common_2.10" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/spark-network-shuffle_2.10" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/spark-streaming_2.10" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/spark-catalyst_2.10" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/spark-sql_2.10" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/spark-hive_2.10" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/spark-docker-integration-tests_2.10" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/spark-unsafe_2.10" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/spark-assembly_2.10" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/spark-streaming-twitter_2.10" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/spark-streaming-flume_2.10" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/spark-streaming-flume-sink_2.10" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/spark-streaming-flume-assembly_2.10" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/spark-streaming-mqtt_2.10" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/spark-streaming-mqtt-assembly_2.10" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/spark-streaming-zeromq_2.10" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/spark-examples_2.10" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/spark-repl_2.10" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/spark-launcher_2.10" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/spark-streaming-kafka_2.10" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/spark-streaming-kafka-assembly_2.10" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/spark-ganglia-lgpl_2.10" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/spark-streaming-kinesis-asl_2.10" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/spark-streaming-kinesis-asl-assembly_2.10" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/java8-tests_2.10" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/spark-yarn_2.10" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/spark-network-yarn_2.10" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/spark-hive-thriftserver_2.10" type="4"/>
+</workingSet>
+</workingSetManager>

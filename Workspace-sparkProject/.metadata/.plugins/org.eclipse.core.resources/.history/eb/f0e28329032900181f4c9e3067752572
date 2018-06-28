@@ -1,0 +1,11 @@
+package com.yatish.spark.MachineLearning;
+
+public class S1_2_Labeled_point {
+
+	/*
+	 * What is a labeled point?
+	 * It is nothing but a dense or a sparse vector, but it will have a label for that vector.
+	 * 
+	 * 
+	 */
+}

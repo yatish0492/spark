@@ -1,0 +1,67 @@
+package com.yatish.spark.transformations;
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.apache.spark.SparkConf;
+import org.apache.spark.api.java.JavaPairRDD;
+import org.apache.spark.api.java.JavaRDD;
+import org.apache.spark.api.java.JavaSparkContext;
+import org.apache.spark.api.java.function.Function;
+
+import com.yatish.spark.partitioner.Custom_Partitioner;
+
+import scala.Tuple2;
+
+public class S11_GroupByKey {
+
+	public static void main(String[] args) {
+		
+		SparkConf conf = new SparkConf().setAppName("SparkStart").setMaster("local");
+		JavaSparkContext sc = new JavaSparkContext(conf);
+		List<Integer> data = Arrays.asList(1, 2, 3, 4, 5, 6, 1, 2, 3);	
+		JavaRDD<Integer> rddData = sc.parallelize(data);
+		
+		JavaPairRDD<Integer,Integer> rddData1 = rddData.mapToPair(a -> {
+			return new Tuple2<Integer,Integer>(a,1);
+		});
+		
+		/*
+		 * Consider, you have a set of key value pairs, there are duplicate keys in that set. spark provides a method '.groupByKey()' to covert duplicate keys to one entry.
+		 * 
+		 * In this case, 
+		 * 	'rddData1'  --> [(1,1), (2,1), (3,1), (4,1), (5,1), (6,1), (1,1), (2,4), (3,1)]
+		 * now if we call '.groupByKey()' method on 'rddData1'. then the result assigned to 'rddData2' will be as follows,
+		 * 	'rddData2'  --> [(4,[1]), (1,[1, 1]), (6,[1]), (3,[1, 1]), (5,[1]), (2,[1, 4])]
+		 * in 'rddData1' we had two entries with same key '2' which are (2,1) and (2,4). that is converted to (2,[1, 4]) in 'rddData2'. Even if there are no duplicate keys also they will be converted
+		 * this way like there is only one entry with key as '4' i.e. (4,1)  this will also be converted as (4,[1])
+		 * 	
+		 */
+		JavaPairRDD<Integer,Iterable<Integer>> rddData2 = rddData1.groupByKey();
+		
+		
+		/*
+		 * There is one more variation of '.groupByKey()' method which is '.groupByKey(int numOfPartitions)', based on the argument passed those many partitions will be created and returned.
+		 * 
+		 * in this case, there will be 5 partitions created and returned to 'rddData3'
+		 */
+		JavaPairRDD<Integer,Iterable<Integer>> rddData3 = rddData1.groupByKey(5);
+		
+		
+		/*
+		 * There is one more variation of '.groupByKey()' method which is '.groupByKey(Partitioner obj)', we can pass the partitioner which we want to be used for partitioning, it may be custom or 
+		 * spark provided partitioners.
+		 * 
+		 */
+		rddData1.groupByKey(new Custom_Partitioner(4));
+		
+		
+		JavaPairRDD<Integer,Iterable<Integer>> rddData4 = rddData1.groupBy(new Function<Tuple2<Integer,Integer>,Tuple2<Integer,Iterable<Integer>>>() {
+			public Tuple2<Integer,Iterable<Integer>> call(Tuple2<Integer,Integer> in) {
+				System.our.println(in);
+				return new Tuple2<Integer,Iterable<Integer>>(1,new ArrayLists().iterator);
+			}
+		});
+	}
+
+}

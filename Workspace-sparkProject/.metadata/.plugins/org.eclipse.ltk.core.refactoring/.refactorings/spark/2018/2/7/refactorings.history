@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.yatish.spark.transformations.S7_coalesce&apos; to &apos;S7_1_coalesce&apos;&#x0A;- Original project: &apos;spark&apos;&#x0A;- Original element: &apos;com.yatish.spark.transformations.S7_coalesce&apos;&#x0A;- Renamed element: &apos;com.yatish.spark.transformations.S7_1_coalesce&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;S7_coalesce&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/main\/java&lt;com.yatish.spark.transformations{S7_coalesce.java[S7_coalesce" matchStrategy="1" name="S7_1_coalesce" qualified="false" references="true" similarDeclarations="false" stamp="1518596853254" textual="false" version="1.0"/>
+</session>

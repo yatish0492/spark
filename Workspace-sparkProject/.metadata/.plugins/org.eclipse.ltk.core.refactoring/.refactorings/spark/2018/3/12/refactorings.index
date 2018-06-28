@@ -1,0 +1,9 @@
+1521533695827	Rename type 'S1_example'
+1521534493755	Rename type 'S1_DataFrame_From_JSON_File_And_Querying'
+1521554991113	Rename type 'S2_Example'
+1521555689294	Delete element
+1521555705501	Rename type 'S3_DataFrame_From_StringRDD'
+1521605718300	Rename type 'S2_DataSet_From_JSON_File'
+1521606090738	Rename type 'S2_DataFrame_From_JSON_File_And_Querying'
+1521606106501	Rename type 'S2_DataSet_From_JSON_File_And_Querying'
+1521692103230	Rename resource 'data.praquet'

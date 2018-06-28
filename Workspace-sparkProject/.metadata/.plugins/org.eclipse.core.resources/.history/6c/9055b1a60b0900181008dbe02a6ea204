@@ -1,0 +1,26 @@
+package com.yatish.spark.transformations;
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.apache.spark.SparkConf;
+import org.apache.spark.api.java.JavaRDD;
+import org.apache.spark.api.java.JavaSparkContext;
+
+public class S2_1_forEach {
+
+	public static void main(String[] args) {
+		
+		SparkConf conf = new SparkConf().setAppName("SparkStart").setMaster("local");
+		JavaSparkContext sc = new JavaSparkContext(conf);
+		
+		List<Integer> data = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14);	
+		JavaRDD<Integer> rddData = sc.parallelize(data);
+		
+		rddData.foreach(a -> {
+			println a;
+		});
+
+	}
+
+}

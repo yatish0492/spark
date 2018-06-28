@@ -1,0 +1,38 @@
+package com.yatish.spark.transformations;
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.apache.spark.SparkConf;
+import org.apache.spark.api.java.JavaPairRDD;
+import org.apache.spark.api.java.JavaRDD;
+import org.apache.spark.api.java.JavaSparkContext;
+import org.apache.spark.api.java.function.Function2;
+
+import scala.Tuple2;
+
+public class S12_ReduceByKey {
+
+	public static void main(String[] args) {
+		
+		SparkConf conf = new SparkConf().setAppName("SparkStart").setMaster("local");
+		JavaSparkContext sc = new JavaSparkContext(conf);
+		List<Integer> data = Arrays.asList(1, 2, 3, 4, 5, 6, 1, 2, 3);	
+		JavaRDD<Integer> rddData = sc.parallelize(data);
+		
+		JavaPairRDD<Integer,Integer> rddData1 = rddData.mapToPair(a -> {
+			return new Tuple2<Integer,Integer>(a,1);
+		});
+		
+		
+		JavaPairRDD<Integer,Integer> rddData2 = rddData1.reduceByKey(new Function2<Integer,Integer,Integer>() {
+			
+			public Integer call(Integer a,Integer b) {
+				return a;
+			}
+		});
+		System.out.println();
+
+	}
+
+}

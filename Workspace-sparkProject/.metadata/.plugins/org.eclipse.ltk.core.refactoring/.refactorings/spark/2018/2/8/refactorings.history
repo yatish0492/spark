@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;S1_example.java&apos; to &apos;spark/src/main/java/com.yatish.DataFrame&apos;&#x0A;- Original project: &apos;spark&apos;&#x0A;- Destination element: &apos;spark/src/main/java/com.yatish.DataFrame&apos;&#x0A;- Original element: &apos;com.yatish.spark.sql.S1_example.java&apos;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="/src\/main\/java&lt;com.yatish.DataFrame" element1="/src\/main\/java&lt;com.yatish.spark.sql{S1_example.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1519372374674" units="1" version="1.0"/>
+</session>

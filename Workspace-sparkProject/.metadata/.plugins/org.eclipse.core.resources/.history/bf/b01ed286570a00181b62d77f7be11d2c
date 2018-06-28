@@ -1,0 +1,10 @@
+package com.yatish.spark.transformations;
+
+public class S3_1_take {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

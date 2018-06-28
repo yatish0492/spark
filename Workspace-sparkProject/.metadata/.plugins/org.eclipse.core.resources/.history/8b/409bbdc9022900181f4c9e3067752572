@@ -1,0 +1,10 @@
+package com.yatish.spark.MachineLearning;
+
+public class S1_2_Labeled_point {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

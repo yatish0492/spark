@@ -1,0 +1,10 @@
+package com.yatish.spark.MachineLearning;
+
+public class S4_Clustering {
+
+	/*
+	 * What is Clustering?
+	 * In simple terms, clustering means classifications
+	 */
+
+}

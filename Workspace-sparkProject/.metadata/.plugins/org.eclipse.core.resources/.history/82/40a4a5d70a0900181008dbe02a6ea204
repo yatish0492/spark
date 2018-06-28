@@ -1,0 +1,10 @@
+package com.yatish.spark.transformations;
+
+public class S2_1_forEach {
+
+	public static void main(String[] args) {
+		SparkConf().setAppName("SparkStart").setMaster("local");
+
+	}
+
+}

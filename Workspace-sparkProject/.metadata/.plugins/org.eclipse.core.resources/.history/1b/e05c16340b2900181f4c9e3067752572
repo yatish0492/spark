@@ -1,0 +1,46 @@
+package com.yatish.spark.MachineLearning;
+
+import org.apache.spark.mllib.linalg.Vector;
+import org.apache.spark.mllib.linalg.Vectors;
+import org.apache.spark.mllib.regression.LabeledPoint;
+
+public class S1_2_Labeled_point {
+	
+	public static void main(String[] args) {
+
+		Vector dv = Vectors.dense(1.0, 0.0, 3.0, 4.0, 0.0, 0.0, 7.0, 0.0, 0.0, 10.0);
+		Vector sv = Vectors.sparse(5,new int[] {0,2,3,6,9}, new double[] {1.0,3.0,4.0,7.0,10.0});
+	/*
+	 * 
+	 * What is a labeled point?
+	 * It is nothing but a dense or a sparse vector, but it will have a label for that vector.
+	 * 
+	 * As shown in the below code, we have created the labeledPoint for dense and sparse vector.
+	 */	
+		LabeledPoint denseLocalPoint = new LabeledPoint(1.0,dv);
+		LabeledPoint sparseLocalPoint = new LabeledPoint(1.0,sv);
+		
+		
+	/*
+	 * NOTE:
+	 * -----
+	 * 1) The supported label type is 'double'. hence we cannot use any other types like string etc as shown below,
+	 * 		LabeledPoint denseLocalPoint = new LabeledPoint("myVector",dv);
+	 * 2) We can create 2 or more LabeledPoint with same label like as follows,
+		  	LabeledPoint denseLocalPoint = new LabeledPoint(1.0,dv);
+			LabeledPoint sparseLocalPoint = new LabeledPoint(1.0,sv);
+	 */
+		
+		
+	/*
+	 * Why do we need a LabeledPoint first of all?
+	 * Spark-Mlib provides an utility class called MLibUtils. This utility provides a method to read the vectors data from files like txt files etc. That method which reads the vectors from file and
+	 * will return the data in form of RDD of type 'LabeledPoint'. i.e. 'JavaRDD<LabeledPoint>',
+	 * 		The 
+	 * 
+	 * 
+	 */
+	
+	}
+	
+}
